@@ -1,6 +1,6 @@
 # CodeAlpha_Hangman_Game
 
-Hangman Game 🎯
+ # Hangman Game 🎯
 
 
 A simple text-based Hangman game built with Python.
