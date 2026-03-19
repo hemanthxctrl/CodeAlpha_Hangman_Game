@@ -33,3 +33,12 @@ Win by guessing all letters before 6 wrong guesses.
 
 
   
+## Possible Extensions
+
+Load words from a text file
+
+Add word categories or hints
+
+Track wins/losses across sessions
+
+Add a GUI using tkinter
