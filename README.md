@@ -7,6 +7,18 @@ A simple text-based Hangman game built with Python.
 
 The player guesses a hidden word one letter at a time before the stick figure is fully drawn.
 
+
+
+## 📚 Concepts Used
+
+| Concept        | Where Used                                   |
+|---------------|----------------------------------------------|
+| Random Module | Picking a random word                        |
+| While Loop    | Main game loop                               |
+| If-Else       | Checking correct/wrong guesses               |
+| Strings       | Displaying the masked word                   |
+| Lists & Sets  | Tracking wrong letters and guessed letters   |
+
 ## How to Play
 
 A random word is selected and displayed as underscores: _ _ _ _ _ _
@@ -35,3 +47,5 @@ Win by guessing all letters before 6 wrong guesses.
   Guesses left: 4
 
   Guess a letter:
+
+  
