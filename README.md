@@ -19,7 +19,7 @@ The player guesses a hidden word one letter at a time before the stick figure is
 | Strings       | Displaying the masked word                   |
 | Lists & Sets  | Tracking wrong letters and guessed letters   |
 
-## How to Play
+## How to Play 🎮
 
 A random word is selected and displayed as underscores: _ _ _ _ _ _
 
