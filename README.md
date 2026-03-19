@@ -42,3 +42,10 @@ Add word categories or hints
 Track wins/losses across sessions
 
 Add a GUI using tkinter
+
+# Author
+
+Hemanth Sreenivas
+
+Virtual Internship Participant
+CodeAlpha - Python Programming Domain
