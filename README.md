@@ -18,3 +18,20 @@ A correct guess reveals the letter in the word.
 A wrong guess adds a body part to the gallows.
 
 Win by guessing all letters before 6 wrong guesses.
+
+
+##  Example Output
+
++---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========
+
+  Word  : p _ t h _ n
+  Wrong : a, e
+  Guesses left: 4
+
+  Guess a letter:
