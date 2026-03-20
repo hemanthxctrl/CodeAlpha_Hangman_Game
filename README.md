@@ -45,5 +45,4 @@ Add a GUI using tkinter
 
 Hemanth Sreenivas
 
-Virtual Internship Participant
-CodeAlpha - Python Programming Domain
+Built as part of Python Basics Project Series — Task 1
