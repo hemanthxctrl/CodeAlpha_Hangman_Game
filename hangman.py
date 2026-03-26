@@ -1,21 +1,39 @@
 import random
 
-# Predefined word list
 words = ["python", "laptop", "gaming", "coding", "market"]
 
-# Select a random word
+# Select random word
 word = random.choice(words)
 guessed_word = ["_"] * len(word)
 
-# Game variables
 guessed_letters = []
-incorrect_guesses = 0
-max_attempts = 6
 
+# 🎚️ Difficulty selection
 print("🎮 Welcome to Hangman!")
-print("Guess the word letter by letter.")
+print("Select Difficulty: Easy / Medium / Hard")
 
-# Game loop
+difficulty = input("Enter difficulty: ").lower()
+
+if difficulty == "easy":
+    max_attempts = 8
+elif difficulty == "hard":
+    max_attempts = 4
+else:
+    max_attempts = 6  # default = medium
+
+incorrect_guesses = 0
+
+# 💡 Hint: reveal one random letter
+
+hint_letter = random.choice(word)
+print(f"\n💡 Hint: The word contains the letter '{hint_letter}'")
+
+for i in range(len(word)):
+    if word[i] == hint_letter:
+        guessed_word[i] = hint_letter
+
+# 🎯 Game loop
+
 while incorrect_guesses < max_attempts and "_" in guessed_word:
     print("\nWord:", " ".join(guessed_word))
     print("Guessed Letters:", guessed_letters)
@@ -23,9 +41,9 @@ while incorrect_guesses < max_attempts and "_" in guessed_word:
 
     guess = input("Enter a letter: ").lower()
 
-    # Validate input
+    # Input validation
     if len(guess) != 1 or not guess.isalpha():
-        print("❌ Please enter a single valid letter.")
+        print("❌ Enter a single valid letter.")
         continue
 
     if guess in guessed_letters:
@@ -44,7 +62,7 @@ while incorrect_guesses < max_attempts and "_" in guessed_word:
         print("❌ Wrong!")
         incorrect_guesses += 1
 
-# Game result
+# 🏁 Result
 if "_" not in guessed_word:
     print("\n🎉 You won! The word was:", word)
 else:

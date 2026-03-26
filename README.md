@@ -13,9 +13,13 @@ while loop
 if-else conditions
 Lists & strings
 
+### The game uses a predefined list of words:
 
+["python", "laptop", "gaming", "coding", "market"]
 
-
+# How to Run
+- install python(if not previously installed)
+- in console, type : python hangman.py
 
 # Author
 
