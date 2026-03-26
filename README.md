@@ -13,7 +13,7 @@ while loop
 if-else conditions
 Lists & strings
 
-### The game uses a predefined list of words:
+## The game uses a predefined list of words:
 
 ["python", "laptop", "gaming", "coding", "market"]
 
