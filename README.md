@@ -9,13 +9,15 @@ The player guesses a hidden word one letter at a time before the stick figure is
 
 ## 📚 Concepts Used
 
-| Concept        | Where Used                                   |
+| Concept        | Where Used                                  |
 |---------------|----------------------------------------------|
 | Random Module | Picking a random word                        |
 | While Loop    | Main game loop                               |
 | If-Else       | Checking correct/wrong guesses               |
 | Strings       | Displaying the masked word                   |
 | Lists & Sets  | Tracking wrong letters and guessed letters   |
+
+
 
 ## How to Play 🎮
 

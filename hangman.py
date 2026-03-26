@@ -1,135 +1,51 @@
 import random
 
-# ── Word list ──────────────────────────────────────────────────────────────────
-WORDS = ["python", "keyboard", "algorithm", "variable", "function"]
+# Predefined word list
+words = ["python", "laptop", "gaming", "coding", "market"]
 
-# ── ASCII art stages (0 = empty gallows … 6 = full figure) ────────────────────
-HANGMAN_STAGES = [
-    """
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-""",
-    """
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-""",
-    """
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-""",
-    """
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========
-""",
-    """
-  +---+
-  |   |
-  O   |
- /|\\  |
-      |
-      |
-=========
-""",
-    """
-  +---+
-  |   |
-  O   |
- /|\\  |
- /    |
-      |
-=========
-""",
-    """
-  +---+
-  |   |
-  O   |
- /|\\  |
- / \\  |
-      |
-=========
-""",
-]
+# Select a random word
+word = random.choice(words)
+guessed_word = ["_"] * len(word)
 
-MAX_WRONG = 6
+# Game variables
+guessed_letters = []
+incorrect_guesses = 0
+max_attempts = 6
 
+print("🎮 Welcome to Hangman!")
+print("Guess the word letter by letter.")
 
-def display_word(word: str, guessed: set) -> str:
-    """Return the word with unguessed letters shown as underscores."""
-    return " ".join(letter if letter in guessed else "_" for letter in word)
+# Game loop
+while incorrect_guesses < max_attempts and "_" in guessed_word:
+    print("\nWord:", " ".join(guessed_word))
+    print("Guessed Letters:", guessed_letters)
+    print(f"Attempts Left: {max_attempts - incorrect_guesses}")
 
+    guess = input("Enter a letter: ").lower()
 
-def play():
-    word = random.choice(WORDS)
-    guessed: set = set()
-    wrong_letters: list = []
+    # Validate input
+    if len(guess) != 1 or not guess.isalpha():
+        print("❌ Please enter a single valid letter.")
+        continue
 
-    print("\n" + "=" * 40)
-    print("       W E L C O M E   T O   H A N G M A N")
-    print("=" * 40)
+    if guess in guessed_letters:
+        print("⚠️ You already guessed that letter.")
+        continue
 
-    while True:
-        # ── Draw current gallows state ─────────────────────────────────────────
-        print(HANGMAN_STAGES[len(wrong_letters)])
-        print(f"  Word  : {display_word(word, guessed)}")
-        print(f"  Wrong : {', '.join(wrong_letters) if wrong_letters else '—'}")
-        print(f"  Guesses left: {MAX_WRONG - len(wrong_letters)}\n")
+    guessed_letters.append(guess)
 
-        # ── Check win ─────────────────────────────────────────────────────────
-        if all(letter in guessed for letter in word):
-            print(f"  🎉  You won! The word was '{word}'.")
-            break
-
-        # ── Check loss ────────────────────────────────────────────────────────
-        if len(wrong_letters) >= MAX_WRONG:
-            print(f"  💀  You lost! The word was '{word}'.")
-            break
-
-        # ── Get player input ──────────────────────────────────────────────────
-        guess = input("  Guess a letter: ").strip().lower()
-
-        if not guess or not guess.isalpha() or len(guess) != 1:
-            print("  ⚠  Please enter a single letter.\n")
-            continue
-
-        if guess in guessed or guess in wrong_letters:
-            print(f"  ⚠  You already guessed '{guess}'.\n")
-            continue
-
-        # ── Evaluate guess ────────────────────────────────────────────────────
-        if guess in word:
-            guessed.add(guess)
-            print(f"  ✓  Good guess!\n")
-        else:
-            wrong_letters.append(guess)
-            print(f"  ✗  Wrong!\n")
-
-    # ── Play again? ────────────────────────────────────────────────────────────
-    again = input("\n  Play again? (y/n): ").strip().lower()
-    if again == "y":
-        play()
+    # Check guess
+    if guess in word:
+        print("✅ Correct!")
+        for i in range(len(word)):
+            if word[i] == guess:
+                guessed_word[i] = guess
     else:
-        print("\n  Thanks for playing! Goodbye.\n")
+        print("❌ Wrong!")
+        incorrect_guesses += 1
 
-
-if __name__ == "__main__":
-    play()
+# Game result
+if "_" not in guessed_word:
+    print("\n🎉 You won! The word was:", word)
+else:
+    print("\n💀 You lost! The word was:", word)
