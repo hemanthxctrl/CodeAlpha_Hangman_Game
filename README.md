@@ -21,6 +21,7 @@ Lists & strings
 - install python(if not previously installed)
 - in console, type : python hangman.py
 
+
 # Author
 
 Hemanth Sreenivas
