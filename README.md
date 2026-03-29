@@ -22,8 +22,8 @@ Lists & strings
 - in console, type : python hangman.py
 
 
-# Author
+# 👤 Author
 
-Hemanth Sreenivas
+Hemanth Sreenivas Uppala
 
 Built as part of Python Basics Project Series — Task 1
