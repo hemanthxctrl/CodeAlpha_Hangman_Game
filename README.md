@@ -23,7 +23,7 @@ Lists & strings
 
 
 
-
+```
 - Hemanth Sreenivas Uppala
 
 Built as part of Python Basics Project Series — Task 1
