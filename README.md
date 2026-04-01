@@ -8,13 +8,13 @@ The player guesses a hidden word one letter at a time before the stick figure is
 
 # Concepts used
 
--random module
+- random module
 
--while loop
+- while loop
 
--if-else conditions
+- if-else conditions
 
--Lists & strings
+- Lists & strings
 
 ## The game uses a predefined list of words:
 
